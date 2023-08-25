@@ -1,0 +1,162 @@
+﻿<Window x:Class="TicTacToeByBloodyAlpha.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToeByBloodyAlpha"
+        mc:Ignorable="d" PreviewKeyDown="Window_PreviewKeyDown"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="Transparent" AllowsTransparency="True" >
+    <Grid>
+        <Border x:Name="CurrentWindow" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="400" Background="#1D2028" BorderThickness="1,1,1,1" BorderBrush="Black" CornerRadius="20" MouseDown="CurrentWindow_MouseDown">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="100" Color="Red" Opacity="0.3"/>
+            </Border.Effect>
+            <Grid>
+                <Label x:Name="Label_Winer" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Player ? Winer" Foreground="WhiteSmoke" FontWeight="Black" Margin="10" Visibility="Hidden" ></Label>
+                
+                <Label x:Name="Label_BloodyAlphaStudio" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="BloodyAlphaStudios" Foreground="WhiteSmoke" Margin="0,0,15,0" FontWeight="Black" FontSize="14" MouseLeave="Btn_exit_Border_MouseLeave" MouseDoubleClick="Label_BloodyAlphaStudio_MouseDown" MouseDown="Label_BloodyAlphaStudio_MouseDown" MouseEnter="Label_BloodyAlphaStudio_MouseEnter">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    
+                </Label>
+                <Label x:Name="Label_TicTacToe" Content="TicTacToe" Foreground="WhiteSmoke" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="15,0,0,0" FontWeight="Black">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                </Label>
+
+
+                <Border x:Name="Btn_exit_Border" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Height="20" Background="WhiteSmoke" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10" MouseEnter="Btn_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave" MouseDown="Btn_exit_Border_MouseDown">
+                    <Grid>
+                        <Label x:Name="Btn_exit_Label" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" MouseEnter="Btn_MouseEnter"></Label>
+                    </Grid>
+                </Border>
+
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical">
+
+                    <Border x:Name="Btn_Restart_Border" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Height="20" Background="WhiteSmoke" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10" MouseEnter="Btn_Restart_Border_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave " MouseDown="Btn_Restart_Border_MouseDown">
+                        <Grid>
+                            <Label x:Name="Btn_Restart_Label" Content="R" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black"></Label>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Btn_Mode_Border" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Height="20" Background="WhiteSmoke" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10,0,0,0" MouseEnter="Btn_Mode_Border_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave " MouseDown="Btn_Mode_Border_MouseDown">
+                        <Grid>
+                            <Label x:Name="Btn_Mode_Label" Content="T" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black"></Label>
+                        </Grid>
+                    </Border>
+
+                </StackPanel>
+                
+
+
+                <Grid Name="Grid_Field" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Width="300" Height="300">
+
+                    <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Top">
+                        <Button x:Name="Btn_Field_1" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_1_Click"></Button>
+                        <Button x:Name="Btn_Field_2" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_2_Click"></Button>
+                        <Button x:Name="Btn_Field_3" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_3_Click"></Button>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Center">
+                        <Button x:Name="Btn_Field_4" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_4_Click"></Button>
+                        <Button x:Name="Btn_Field_5" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_5_Click"></Button>
+                        <Button x:Name="Btn_Field_6" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_6_Click"></Button>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Bottom">
+                        <Button x:Name="Btn_Field_7" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_7_Click"></Button>
+                        <Button x:Name="Btn_Field_8" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_8_Click"></Button>
+                        <Button x:Name="Btn_Field_9" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_9_Click"></Button>
+                    </StackPanel>
+
+                </Grid>
+
+
+            </Grid>
+
+        </Border>
+        <Rectangle x:Name="Rectangle_Diag_LeftDown_RightUp" Visibility="Hidden" HorizontalAlignment="Center" Height="5" Margin="0,224,0,0" Fill="Red" VerticalAlignment="Top" Width="368" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-43.969"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_Horizontal_Up" Visibility="Hidden" HorizontalAlignment="Center" Height="5" Margin="0,125,0,0" Fill="Red" VerticalAlignment="Top" Width="304" >
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_Horizontal_Center" Visibility="Hidden" HorizontalAlignment="Center" Height="5" Margin="0,220,0,0" Fill="Red" VerticalAlignment="Top" Width="304" >
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_Horizontal_Down" Visibility="Hidden" HorizontalAlignment="Center" Height="5" Margin="0,320,0,0" Fill="Red" VerticalAlignment="Top" Width="304" >
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_Vertical_Left" Visibility="Hidden" HorizontalAlignment="Left" Height="6" Margin="152,0,0,0" Fill="Red" VerticalAlignment="Center" Width="299" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.195"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_Vertical_Center" Visibility="Hidden" HorizontalAlignment="Left" Height="6" Margin="252,0,0,0" Fill="Red" VerticalAlignment="Center" Width="299" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.195"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_Vertical_Right" Visibility="Hidden" HorizontalAlignment="Left" Height="6" Margin="352,0,0,0" Fill="Red" VerticalAlignment="Center" Width="299" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.195"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_Diag_LeftUp_RightDown" Visibility="Hidden" HorizontalAlignment="Center" Height="4" Fill="Red" VerticalAlignment="Center" Width="404" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="44.197"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Red"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="875,155,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
