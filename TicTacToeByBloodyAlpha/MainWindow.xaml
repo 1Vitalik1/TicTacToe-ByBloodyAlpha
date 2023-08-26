@@ -26,46 +26,70 @@
                     </Label.Effect>
                 </Label>
 
+                <StackPanel Orientation="Horizontal" Margin="395,5,0,0">
 
-                <Border x:Name="Btn_exit_Border" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Height="20" Background="WhiteSmoke" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10" MouseEnter="Btn_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave" MouseDown="Btn_exit_Border_MouseDown">
-                    <Grid>
-                        <Label x:Name="Btn_exit_Label" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" MouseEnter="Btn_MouseEnter"></Label>
-                    </Grid>
-                </Border>
+                    <Border x:Name="Btn_Info_Border" Visibility="Hidden" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Height="20" Background="#60D34E" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="5" MouseEnter="Btn_Info_Border_MouseEnter" MouseLeave="Btn_Info_Border_MouseLeave" MouseDown="Btn_Info_Border_MouseDown">
+                        <Grid>
+                            <Label x:Name="Btn_Info_Label" Content="i" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" Foreground="White"></Label>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Btn_WindowsMode_Border" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Height="20" Background="#E9C66F" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="5" MouseEnter="Btn_WindowsMode_Border_MouseEnter" MouseLeave="Btn_WindowsMode_Border_MouseLeave" MouseDown="Btn_WindowsMode_Border_MouseDown">
+                        <Grid>
+                            <Label x:Name="Btn_WindowsMode_Label" Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" MouseEnter="Btn_WindowsMode_Border_MouseEnter" Foreground="White"></Label>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Btn_exit_Border" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Height="20" Background="#DC3E3E" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="5" MouseEnter="Btn_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave" MouseDown="Btn_exit_Border_MouseDown">
+                        <Grid>
+                            <Label x:Name="Btn_exit_Label" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" MouseEnter="Btn_MouseEnter" Foreground="White"></Label>
+                        </Grid>
+                    </Border>
+
+
+
+
+                </StackPanel>
 
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical">
 
-                    <Border x:Name="Btn_Restart_Border" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Height="20" Background="WhiteSmoke" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10" MouseEnter="Btn_Restart_Border_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave " MouseDown="Btn_Restart_Border_MouseDown">
+                    <Border x:Name="Btn_Restart_Border" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Height="20" Background="#366EC0" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10" MouseEnter="Btn_Restart_Border_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave " MouseDown="Btn_Restart_Border_MouseDown" >
                         <Grid>
-                            <Label x:Name="Btn_Restart_Label" Content="R" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black"></Label>
+                            <Label x:Name="Btn_Restart_Label" Content="R" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" Foreground="White"></Label>
                         </Grid>
                     </Border>
 
-                    <Border x:Name="Btn_Mode_Border" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Height="20" Background="WhiteSmoke" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10,0,0,0" MouseEnter="Btn_Mode_Border_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave " MouseDown="Btn_Mode_Border_MouseDown">
+                    <Border x:Name="Btn_Mode_Border" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Height="20" Background="#366EC0" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10,0,0,0" MouseEnter="Btn_Mode_Border_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave " MouseDown="Btn_Mode_Border_MouseDown">
                         <Grid>
-                            <Label x:Name="Btn_Mode_Label" Content="T" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black"></Label>
+                            <Label x:Name="Btn_Mode_Label" Content="T" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" Foreground="White"></Label>
                         </Grid>
                     </Border>
 
+                    <Border x:Name="Btn_AiDifucy_Border" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Height="20" Background="#366EC0" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Margin="10,10,0,0" MouseEnter="Btn_AiDifucy_Border_MouseEnter" MouseLeave="Btn_exit_Border_MouseLeave " MouseDown="Btn_AiDifucy_Border_MouseDown">
+                        <Grid>
+                            <Label x:Name="Btn_AiDif_Label" Content="H" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0" FontWeight="Black" Foreground="White"></Label>
+                        </Grid>
+                    </Border>
+                    
                 </StackPanel>
                 
 
 
                 <Grid Name="Grid_Field" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Width="300" Height="300">
 
-                    <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Top">
+                    <StackPanel x:Name="StackPanel_Field1_3" Orientation="Horizontal" Height="100" VerticalAlignment="Top">
                         <Button x:Name="Btn_Field_1" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_1_Click"></Button>
                         <Button x:Name="Btn_Field_2" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_2_Click"></Button>
                         <Button x:Name="Btn_Field_3" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_3_Click"></Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Center">
+                    <StackPanel x:Name="StackPanel_Field4_6" Orientation="Horizontal" Height="100" VerticalAlignment="Center">
                         <Button x:Name="Btn_Field_4" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_4_Click"></Button>
                         <Button x:Name="Btn_Field_5" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_5_Click"></Button>
                         <Button x:Name="Btn_Field_6" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_6_Click"></Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Bottom">
+                    <StackPanel x:Name="StackPanel_Field7_9" Orientation="Horizontal" Height="100" VerticalAlignment="Bottom">
                         <Button x:Name="Btn_Field_7" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_7_Click"></Button>
                         <Button x:Name="Btn_Field_8" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_8_Click"></Button>
                         <Button x:Name="Btn_Field_9" Width="100" FontSize="75" FontWeight="Black" Click="Btn_Field_9_Click"></Button>
