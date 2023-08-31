@@ -1,0 +1,31 @@
+﻿<Page x:Class="TicTacToeByBloodyAlpha.Pages.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TicTacToeByBloodyAlpha.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="About">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="About:" HorizontalAlignment="Center" Foreground="White" FontWeight="Black" FontSize="24">
+                <Label.Effect>
+                    <DropShadowEffect Color="#FFD87F7F" />
+                </Label.Effect>
+            </Label>
+            <Label Content="Source and Design By: BloodyAlphaStudio" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black" FontSize="16">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+        <Label Content="Chief Tester: Psyonic" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontWeight="Black" FontSize="15" >
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <Button Background="DarkRed" Height="38" Width="250"  Foreground="White" Content="Back" FontWeight="Black" Click="Button_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

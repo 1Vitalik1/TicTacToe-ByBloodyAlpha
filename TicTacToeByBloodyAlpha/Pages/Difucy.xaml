@@ -9,6 +9,34 @@
       Title="Difucy">
 
     <Grid>
-        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Difucy:" HorizontalAlignment="Center" Foreground="White" FontWeight="Black" FontSize="24">
+                <Label.Effect>
+                    <DropShadowEffect Color="#FFD87F7F" />
+                </Label.Effect>
+            </Label>
+
+            <Button x:Name="Btn_Hard" Foreground="White" Background="DarkRed" Height="48" Width="200" Content="Hard" FontSize="20" FontWeight="Black" Click="Btn_Hard_Click"  >
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="Btn_Normal" Foreground="White" Background="DarkRed" Height="48" Width="200" Content="Normal" FontSize="20" FontWeight="Black" Click="Btn_Normal_Click">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="Btn_Easy" Foreground="White" Background="DarkRed" Height="48" Width="200" Content="Easy" FontSize="20" FontWeight="Black" Click="Btn_Easy_Click">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Button.Effect>
+            </Button>
+
+            <Button x:Name="Btn_Back" Foreground="White" Background="DarkRed" Height="48" Width="200" Content="Back" FontSize="20" FontWeight="Black" Click="Btn_Back_Click">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>

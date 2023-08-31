@@ -16,37 +16,30 @@ using System.Windows.Shapes;
 namespace TicTacToeByBloodyAlpha.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Difucy.xaml
+    /// Логика взаимодействия для PlayerCountSelector.xaml
     /// </summary>
-    public partial class Difucy : Page
+    public partial class PlayerCountSelector : Page
     {
-        public Difucy()
+        public PlayerCountSelector()
         {
             InitializeComponent();
         }
 
-        private void Btn_Hard_Click(object sender, RoutedEventArgs e)
+        private void Btn_SoloGame_Click(object sender, RoutedEventArgs e)
         {
-            Game game = new Game(3,1);
-            NavigationService.Navigate(game);
+            Difucy difucy = new Difucy();
+            NavigationService.Navigate(difucy);
         }
 
-        private void Btn_Normal_Click(object sender, RoutedEventArgs e)
+        private void Btn_DuoGame_Click(object sender, RoutedEventArgs e)
         {
-            Game game = new Game(2, 1);
-            NavigationService.Navigate(game);
-        }
-
-        private void Btn_Easy_Click(object sender, RoutedEventArgs e)
-        {
-            Game game = new Game(1, 1);
+            Game game = new Game(3,2);
             NavigationService.Navigate(game);
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
-
         }
     }
 }

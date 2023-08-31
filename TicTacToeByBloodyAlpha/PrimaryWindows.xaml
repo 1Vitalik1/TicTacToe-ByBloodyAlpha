@@ -1,0 +1,20 @@
+﻿<Window x:Class="TicTacToeByBloodyAlpha.PrimaryWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToeByBloodyAlpha"
+        mc:Ignorable="d"
+        Title="PrimaryWindows" Height="450" Width="800" Background="Transparent" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle = "None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Border x:Name="CurrentWindow" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="400" Background="#1D2028" BorderThickness="1,1,1,1" BorderBrush="Black" CornerRadius="20" MouseDown="CurrentWindow_MouseDown">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="100" Color="Red" Opacity="0.3"/>
+            </Border.Effect>
+
+            <Grid>
+                <Frame x:Name="PrimaryFrame" NavigationUIVisibility="Hidden"></Frame>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

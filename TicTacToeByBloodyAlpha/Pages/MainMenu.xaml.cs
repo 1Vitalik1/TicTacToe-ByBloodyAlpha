@@ -24,5 +24,23 @@ namespace TicTacToeByBloodyAlpha.Pages
         {
             InitializeComponent();
         }
+
+        private void Btn_StartGame_Click(object sender, RoutedEventArgs e)
+        {
+            PlayerCountSelector playerCountSelector = new PlayerCountSelector();
+            NavigationService.Navigate(playerCountSelector);
+        }
+
+        private void Btn_About_Click(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            NavigationService.Navigate(about);
+
+        }
+
+        private void Btn_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

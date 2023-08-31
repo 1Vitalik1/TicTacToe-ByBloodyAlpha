@@ -181,6 +181,6 @@
                 <DropShadowEffect Color="Red"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="875,155,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

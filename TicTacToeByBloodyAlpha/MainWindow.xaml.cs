@@ -95,7 +95,7 @@ namespace TicTacToeByBloodyAlpha
 
         public void CheckComputerStep()
         {
-            if (AiDifucy >= 3)
+            if (AiDifucy >= 2)
             {
                 if (player2.Field1 == true & player2.Field2 == true & CurrentField3 == false) { AiStep = 3; AiStepRand = false; }
                 if (player2.Field4 == true & player2.Field5 == true & CurrentField6 == false) { AiStep = 6; AiStepRand = false; }
@@ -146,6 +146,11 @@ namespace TicTacToeByBloodyAlpha
                 if (player1.Field2 == true & player1.Field8 == true & CurrentField5 == false) { AiStep = 5; AiStepRand = false; }
                 if (player1.Field3 == true & player1.Field9 == true & CurrentField6 == false) { AiStep = 6; AiStepRand = false; } //Block8 
 
+                if (AiDifucy == 3)
+                {
+                    if (StepNum < 2 & (player1.Field1 == true || player1.Field3 == true || player1.Field7 == true || player1.Field9 == true)) { AiStep = 5; AiStepRand = false; }
+                    if (StepNum < 2 & (player1.Field5 == true)) { int Edge; Edge = rnd.Next(1, 5); if (Edge == 1) { AiStep = 1; AiStepRand = false; } if (Edge == 2) { AiStep = 3; AiStepRand = false; } if (Edge == 3) { AiStep = 7; AiStepRand = false; } if (Edge == 4) { AiStep = 9; AiStepRand = false; } } 
+                }
 
             }
         }
@@ -296,6 +301,7 @@ namespace TicTacToeByBloodyAlpha
 
         }
 
+        #region ButtonField
 
         private void Btn_Field_1_Click(object sender, RoutedEventArgs e)
         {
@@ -634,6 +640,8 @@ namespace TicTacToeByBloodyAlpha
                 }
             }
         }
+
+        #endregion 
 
         private void CheckDrawGame()
         {
